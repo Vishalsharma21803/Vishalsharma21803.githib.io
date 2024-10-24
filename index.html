@@ -5,59 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vishal Sharma's Portfolio</title>
     <style>
+        /* Light and Dark Mode Variables */
+        :root {
+            --primary-bg-color: rgba(255, 255, 255, 0.9);
+            --primary-text-color: #333;
+            --secondary-bg-color: rgba(0, 0, 0, 0.1);
+            --accent-color: #ff5722;
+            --secondary-accent: #03a9f4;
+            --box-shadow-color: rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode {
+            --primary-bg-color: rgba(20, 20, 20, 0.9);
+            --primary-text-color: #f0f0f0;
+            --secondary-bg-color: rgba(255, 255, 255, 0.1);
+            --accent-color: #ff9800;
+            --secondary-accent: #009688;
+            --box-shadow-color: rgba(255, 255, 255, 0.1);
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: var(--primary-bg-color);
+            color: var(--primary-text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         header {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-accent));
+            color: white;
+            backdrop-filter: blur(10px);
+            position: relative;
         }
+
         header h1 {
-            margin: 0;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary-text-color);
+            color: var(--primary-bg-color);
+            border: none;
+            padding: 0.7rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
         .container {
             width: 80%;
             margin: auto;
             padding: 2rem 0;
         }
+
         .about, .projects, .skills, .contact {
             margin-bottom: 3rem;
         }
+
         .section-title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            text-align: center;
+            color: var(--accent-color);
         }
+
         .about p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
         }
+
         .projects-list, .skills-list {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
+
         .projects-list li, .skills-list li {
-            background-color: #fff;
-            padding: 1rem;
-            margin: 1rem 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #333;
-            color: white;
+            background-color: var(--secondary-bg-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--box-shadow-color);
+            width: 300px;
             text-align: center;
-            padding: 1rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid var(--secondary-accent);
         }
+
+        .projects-list li:hover, .skills-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px var(--box-shadow-color);
+        }
+
+        .projects-list li h3, .skills-list li {
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--secondary-bg-color);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            backdrop-filter: blur(5px);
+        }
+
         .contact a {
-            color: #333;
+            color: var(--secondary-accent);
             text-decoration: none;
+            font-weight: bold;
         }
+
         .contact a:hover {
             text-decoration: underline;
+        }
+
+        /* Button Hover Effects */
+        button:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -65,15 +145,15 @@
     <header>
         <h1>Vishal Sharma</h1>
         <p>Software Engineer | Full-Stack Developer</p>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     </header>
 
     <div class="container">
         <section class="about">
             <h2 class="section-title">About Me</h2>
             <p>
-                Hi, I'm Vishal Sharma, a passionate software engineer with experience in full-stack development.
-                I love building applications that solve real-world problems, using languages like C++, Java, 
-                and frameworks such as Node.js, Angular, and React.js.
+                Hi, I'm Vishal Sharma, a passionate software engineer with a love for building applications that solve real-world problems.
+                I specialize in full-stack development using technologies such as C++, Java, Node.js, Angular, and React.js.
             </p>
         </section>
 
@@ -82,23 +162,23 @@
             <ul class="projects-list">
                 <li>
                     <h3>Recipe Blog (Node.js)</h3>
-                    <p>A dynamic blog to share and manage recipes, built using Node.js, Express, and MongoDB.</p>
+                    <p>A dynamic blog for managing and sharing recipes, built with Node.js and MongoDB.</p>
                 </li>
                 <li>
                     <h3>E-Commerce Website (Angular)</h3>
-                    <p>An e-commerce platform built using Angular, providing a seamless shopping experience with product listings, cart functionality, and checkout.</p>
+                    <p>An e-commerce platform providing a seamless shopping experience, developed using Angular.</p>
                 </li>
                 <li>
                     <h3>To-Do List (JavaScript)</h3>
-                    <p>A simple and interactive to-do list application built with vanilla JavaScript for task management.</p>
+                    <p>A task management tool built with vanilla JavaScript, designed for simple task handling.</p>
                 </li>
                 <li>
                     <h3>Tic Tac Toe Game (JavaScript)</h3>
-                    <p>A two-player Tic Tac Toe game developed using JavaScript, showcasing game logic and DOM manipulation.</p>
+                    <p>A two-player Tic Tac Toe game developed using JavaScript, with interactive gameplay.</p>
                 </li>
                 <li>
-                    <h3>Human vs Computer (C++ with Minimax Algorithm)</h3>
-                    <p>A C++ game where the human competes against a computer opponent, using the Minimax algorithm for optimal decision-making.</p>
+                    <h3>Human vs Computer (C++ Minimax)</h3>
+                    <p>Using the Minimax algorithm in C++ to develop a strategic game against the computer.</p>
                 </li>
             </ul>
         </section>
@@ -106,22 +186,29 @@
         <section class="skills">
             <h2 class="section-title">Skills</h2>
             <ul class="skills-list">
-                <li>Languages: C, C++, Python, Java, JavaScript (Node.js, React.js, TypeScript)</li>
-                <li>Web Technologies: HTML, CSS</li>
-                <li>Databases: MySQL, MongoDB</li>
-                <li>Tools: VS Code, Git</li>
+                <li>C, C++, Python, Java, JavaScript (Node.js, React.js, TypeScript)</li>
+                <li>HTML, CSS</li>
+                <li>MySQL, MongoDB</li>
+                <li>VS Code, Git</li>
             </ul>
         </section>
 
         <section class="contact">
             <h2 class="section-title">Contact</h2>
-            <p>Email: <a href="mailto:vishal@example.com">vishal@example.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/vishal-sharma" target="_blank">linkedin.com/in/vishal-sharma</a></p>
+            <p>Email: <a href="mailto:vishal2003ggg@gmail.com">vishal2003ggg@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/Vishalsharma21803">github.com/Vishalsharma21803</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vishalsharma9982" target="_blank">linkedin.com/in/vishalsharma9982</a></p>
         </section>
     </div>
 
     <footer>
         <p>&copy; 2024 Vishal Sharma. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
