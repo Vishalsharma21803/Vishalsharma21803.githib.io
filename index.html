@@ -3,105 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Website">
-    <title>Your Name - Personal Website</title>
+    <title>Vishal Sharma's Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #333;
             color: white;
-            padding: 10px 0;
             text-align: center;
+            padding: 1rem 0;
         }
-        nav {
-            text-align: center;
-            margin: 20px 0;
+        header h1 {
+            margin: 0;
         }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2rem 0;
+        }
+        .about, .projects, .skills, .contact {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             color: #333;
         }
-        nav a:hover {
-            color: #4CAF50;
+        .about p {
+            font-size: 1.2rem;
         }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #4CAF50;
-            color: white;
-/*             position: fixed; */
-            bottom: 0;
-            width: 100%;
-        }
-        h1, h2 {
-            color: #4CAF50;
-        }
-        ul {
+        .projects-list, .skills-list {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            margin: 10px 0;
+        .projects-list li, .skills-list li {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .social-media a {
-            margin: 0 10px;
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .contact a {
+            color: #333;
             text-decoration: none;
-            color: #4CAF50;
+        }
+        .contact a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p><strong>Welcome to My Personal Website</strong></p>
+        <h1>Vishal Sharma</h1>
+        <p>Software Engineer | Full-Stack Developer</p>
     </header>
 
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact Info</a>
-        <a href="#social">Social Media</a>
-    </nav>
+    <div class="container">
+        <section class="about">
+            <h2 class="section-title">About Me</h2>
+            <p>
+                Hi, I'm Vishal Sharma, a passionate software engineer with experience in full-stack development.
+                I love building applications that solve real-world problems, using languages like C++, Java, 
+                and frameworks such as Node.js, Angular, and React.js.
+            </p>
+        </section>
 
-    <section id="about">
-    <h2>About Me</h2>
-    <p>Hi, I'm Vishal Sharma, a passionate software developer with a keen interest in building innovative and efficient solutions. With a strong foundation in coding and problem-solving, I enjoy working with cutting-edge technologies and collaborating on exciting projects. I am always eager to learn new things and take on challenges that push my boundaries. Currently, I am seeking new and exciting opportunities where I can leverage my skills to contribute to impactful projects and grow professionally.</p>
-</section>
+        <section class="projects">
+            <h2 class="section-title">Projects</h2>
+            <ul class="projects-list">
+                <li>
+                    <h3>Recipe Blog (Node.js)</h3>
+                    <p>A dynamic blog to share and manage recipes, built using Node.js, Express, and MongoDB.</p>
+                </li>
+                <li>
+                    <h3>E-Commerce Website (Angular)</h3>
+                    <p>An e-commerce platform built using Angular, providing a seamless shopping experience with product listings, cart functionality, and checkout.</p>
+                </li>
+                <li>
+                    <h3>To-Do List (JavaScript)</h3>
+                    <p>A simple and interactive to-do list application built with vanilla JavaScript for task management.</p>
+                </li>
+                <li>
+                    <h3>Tic Tac Toe Game (JavaScript)</h3>
+                    <p>A two-player Tic Tac Toe game developed using JavaScript, showcasing game logic and DOM manipulation.</p>
+                </li>
+                <li>
+                    <h3>Human vs Computer (C++ with Minimax Algorithm)</h3>
+                    <p>A C++ game where the human competes against a computer opponent, using the Minimax algorithm for optimal decision-making.</p>
+                </li>
+            </ul>
+        </section>
 
+        <section class="skills">
+            <h2 class="section-title">Skills</h2>
+            <ul class="skills-list">
+                <li>Languages: C, C++, Python, Java, JavaScript (Node.js, React.js, TypeScript)</li>
+                <li>Web Technologies: HTML, CSS</li>
+                <li>Databases: MySQL, MongoDB</li>
+                <li>Tools: VS Code, Git</li>
+            </ul>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <ul>
-            <li><strong>Email:</strong> vishal21803sharma@gmail.com</li>
-            <li><strong>Phone:</strong> +91 7973017760</li>
-            <li><strong>Location:</strong> Uttar Pradesh, India</li>
-        </ul>
-    </section>
-
-    <section id="social">
-        <h2>Social Media</h2>
-        <div class="social-media">
-            
-            <a href="https://www.linkedin.com/in/vishalsharma9982" target="_blank">LinkedIn</a>
-            <a href="https://github.com/Vishalsharma21803" target="_blank">GitHub</a>
-        </div>
-    </section>
+        <section class="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>Email: <a href="mailto:vishal@example.com">vishal@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/vishal-sharma" target="_blank">linkedin.com/in/vishal-sharma</a></p>
+        </section>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Vishal Sharma. All rights reserved.</p>
+        <p>&copy; 2024 Vishal Sharma. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
